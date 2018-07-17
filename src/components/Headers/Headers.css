@@ -1,0 +1,98 @@
+@media (min-width: 768px) {
+	.wrapper {
+	    padding: 20px 0 0 0;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+div {
+	display: block;
+}
+
+.wrapper {
+	padding: 15px 0;
+}
+
+@media (min-width: 768px) {
+	.container {
+	    padding-left: 20px;
+	    padding-right: 20px;
+	    max-width: 1090px;
+	}
+}
+
+.container {
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media (min-width: 768px) {
+	.chart-table {
+	    margin: 40px 0 0;
+	}
+}
+
+.chart-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #7a7a7a;
+    clear: both;
+    width: 100%;
+}
+
+table {
+	border-color: grey;
+	padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+	.chart-table th {
+	    font-size: 12px;
+	    line-height: 12px;
+	    padding: 0 0 20px 0;
+	}
+}
+
+.chart-table th {
+    text-align: left;
+    text-transform: uppercase;
+}
+
+th {
+    font-weight: bold;
+    /*text-align: -internal-center;*/
+}
+
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.chart-table th.chart-table-streams {
+    text-align: right;
+    white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+	.chart-table th:last-child, .chart-table td:last-child {
+	    padding-right: 30px;
+	}
+}
+
+@media (min-width: 768px) {
+	.chart-table th:first-child, .chart-table td:first-child {
+	    padding-left: 150px;
+	}
+}
+
+@media (min-width: 768px) {
+	.chart-table th {
+	    font-size: 12px;
+	    line-height: 12px;
+	    padding: 0 0 20px 0;
+	}
+}
