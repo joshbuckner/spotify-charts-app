@@ -2,12 +2,12 @@ import React from 'react';
 import Track from '../Track/Track';
 import Headers from '../Headers/Headers';
 import './Tracklist.css';
-import { spotify } from './sample_database';
-import { spotify2 } from './sample_database2';
+// import { spotify } from './sample_database';
+// import { spotify2 } from './sample_database2';
 
-const Tracklist = () => {
-	const sortedByPopular = spotify2.items.sort((a, b) => {
-		return b.track.popularity - a.track.popularity
+const Tracklist = ({ genreList }) => {
+	const sortedByPopular = genreList.tracks.items.sort((a, b) => {
+		return b.popularity - a.popularity
 	});
 
 	const trackComponent = sortedByPopular.map((song, i) => {
@@ -16,9 +16,9 @@ const Tracklist = () => {
 			<Track 
 				key={i}
 				rank={rank + i + 1}
-				trackName={spotify2.items[i].track.name} 
-				artistName={spotify2.items[i].track.artists[0].name} 
-				popularity={spotify2.items[i].track.popularity} 
+				trackName={genreList.tracks.items[i].name} 
+				artistName={genreList.tracks.items[i].artists[0].name} 
+				popularity={genreList.tracks.items[i].popularity} 
 			/>
 		);
 	})
