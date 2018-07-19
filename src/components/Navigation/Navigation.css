@@ -1,6 +1,10 @@
 /** {
 	box-sizing: border-box;
 }*/
+/*.top-bar {
+	position: fixed;
+	transform: translateX(100%);
+}*/
 
 div {
 	display: block;

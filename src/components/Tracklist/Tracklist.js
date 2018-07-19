@@ -12,13 +12,16 @@ const Tracklist = () => {
 
 	const trackComponent = sortedByPopular.map((song, i) => {
 		let rank = 0;
-		return <Track 
-					rank={rank + i + 1}
-					trackName={spotify2.items[i].track.name} 
-					artistName={spotify2.items[i].track.artists[0].name} 
-					popularity={spotify2.items[i].track.popularity} 
-				/>
-	});
+		return (
+			<Track 
+				key={i}
+				rank={rank + i + 1}
+				trackName={spotify2.items[i].track.name} 
+				artistName={spotify2.items[i].track.artists[0].name} 
+				popularity={spotify2.items[i].track.popularity} 
+			/>
+		);
+	})
 	
 	return (
 			<div>
