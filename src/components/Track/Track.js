@@ -1,18 +1,18 @@
 import React from 'react';
 import './Track.css';
 
-const Track = () => {
+const Track = ({ trackName, artistName, popularity, rank }) => {
 	return (
 			<div className="track">
 				<div className="container-track">
 					<tbody className="chart-table-body">
 						<tr>
-							<td className="chart-table-position">1</td>
+							<td className="chart-table-position">{rank}</td>
 							<td className="chart-table-track">
-								<strong>In My Feelings</strong>
-								<span className="chart-table-artist">by Drake</span>
+								<strong>{trackName}</strong>
+								<span className="chart-table-artist">by {artistName}</span>
 							</td>
-							<td className="chart-table-streamstats">9,665,341</td>
+							<td className="chart-table-streamstats">{popularity}</td>
 						</tr>
 					</tbody>
 				</div>

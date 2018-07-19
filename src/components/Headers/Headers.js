@@ -9,7 +9,7 @@ const Headers = () => {
 						<thead>
 							<tr>
 								<th class="chart-table-track">Track</th>
-								<th class="chart-table-streams">Streams</th>
+								<th class="chart-table-streams">Popularity</th>
 							</tr>
 						</thead>
 					</table>

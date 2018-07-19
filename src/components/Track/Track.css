@@ -3,13 +3,12 @@ div {
 }
 
 .track {
-	height: 50px;
+	height: 60px;
 	padding: 5px 0;
-	/*background: #000;*/
 	display: block;
-	margin: -15px auto;
+	margin: 0 auto;
 	box-sizing: border-box;
-	width: 95%;
+	width: 100%;
 }
 
 
@@ -20,38 +19,26 @@ div {
 	max-width: 1090px;
 	margin: 0 auto;
 	box-sizing: border-box;
-	/*width: 100%;*/
-	border: 1px solid #5e5d5d;
-	border-left: 0px solid;
-	border-right: 0px solid;
+	border-top: 1px solid #5e5d5d;
+
 }
 
 .chart-table-position {
 	display: block;
 	color: #5e5d5d;
 	font: 25px/40px Trebuchet MS;
-	/*background-size: 100% 100%;*/
-	/*height: 40px;*/
-	margin: 0 20px 0 0;
+	margin: 8px 20px 0 0;
 	margin-left: 40px;
-	/*width: 128px;*/
-	/*f*/
-	/*background-repeat: no-repeat;
-    background-position: 0 50%;*/
     float: left;
     font-weight: 800;
-    /*padding: 0;*/
-    /*text-indent: -9999px;*/
 }
 
 .chart-table-artist {
 	color: #5e5d5d;
 	display: block;
 	float: right;
-	/*font-size: 40px;*/
     line-height: 40px;
     padding: 0 0 0 10px;
-	/*border-left: 1px solid #fff;*/
     cursor: default;
     font: 20px/40px Trebuchet MS;
     margin: 0;
@@ -60,10 +47,8 @@ div {
 
 .chart-table-track {
 	display: block;
-	/*font-size: 40px;*/
     line-height: 40px;
-    padding: 0 0 0 43px;
-	/*border-left: 1px solid #fff;*/
+    padding: 8px 0 0 43px;
     cursor: default;
     float: left;
     font: 20px/40px Trebuchet MS;
@@ -74,16 +59,10 @@ div {
 .chart-table-streamstats {
 	display: block;
 	color: #5e5d5d;
-	/*font-size: 40px;*/
     line-height: 40px;
-    /*text-align: right;*/
-    padding: 0 0 0 972px;
-	/*border-left: 1px solid #fff;*/
+    padding: 8px 0 0 972px;
     cursor: default;
     font: 20px/40px Trebuchet MS;
-    /*margin: 0 auto;*/
-    /*float: right;*/
     position: relative;
-    /*width: 150px;*/
 }
 
