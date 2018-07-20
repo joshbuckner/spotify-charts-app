@@ -13,7 +13,7 @@ class App extends Component {
   	super()
   	this.state = {
       genreList: genreList,
-	  searchField: ''
+	    searchField: ''
   	}
   }
 
@@ -28,6 +28,31 @@ class App extends Component {
 	 //  	console.log(this.state.genreList);
   // }
 
+  updateGenreList = (event) => {
+      // console.log('this.state', this.state);
+      const BASE_URL = 'https://api.spotify.com/v1/search?';
+      const FETCH_URL = BASE_URL + 'query=genre%3A' + this.state.searchField + '&type=track&market=US&offset=0&limit=50';
+      var accessToken = 'BQDNOBi_a1hP0ZQKiIsyb7es8DTkB8QWmCjQedMbMiZxsUt0en5Kc3VctbM1VztJbatrTyfFDmqFVVNw8cS2WGC74Y-NGaUim_PKJ74laqt3Ln2nvlUm1OWPaiMDTblq5LSE17KOszwMIqqt_CasB_wfA1pdWQ'
+
+      var myOptions = {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + accessToken
+        },
+        mode: 'cors',
+        cache: 'default'
+      };
+
+      fetch(FETCH_URL, myOptions)
+        .then(response => response.json())
+        .then(tracks => {        
+          this.setState({ genreList: tracks });
+        })
+
+    }
+
+  
+
   onSearchChange = (event) => {
   	this.setState({ searchField: event.target.value })
   	// console.log(this.state.searchField);
@@ -39,14 +64,18 @@ class App extends Component {
   // }
 
   render() {
-    return (
-      <div id="content" className="App">
-        <Navigation />
-       {/*<PlaylistInput />*/}
-        <FilterBy updateGenreList={this.updateGenreList} searchChange={this.onSearchChange}/>
-        {<Tracklist genreList={this.state.genreList} />}
-      </div>
-    );
+  	if (this.state.genreList.length === 0) {
+  		return <h1>Loading</h1>
+  	} else {
+	    return (
+	      <div id="content" className="App">
+	        <Navigation />
+	       {/*<PlaylistInput />*/}
+	        <FilterBy updateGenreList={this.updateGenreList} searchChange={this.onSearchChange}/>
+	        {<Tracklist genreList={this.state.genreList} />}
+	      </div>
+	    );
+	}
   }
 }
 
