@@ -3,13 +3,13 @@ import './Headers.css';
 
 const Headers = () => {
 	return (
-			<div class="wrapper">
-				<div class="container">
-					<table class="chart-table">
+			<div className="wrapper">
+				<div className="container">
+					<table className="chart-table">
 						<thead>
 							<tr>
-								<th class="chart-table-track">Track</th>
-								<th class="chart-table-streams">Popularity</th>
+								<th className="chart-table-track">Track</th>
+								<th className="chart-table-streams">Popularity</th>
 							</tr>
 						</thead>
 					</table>

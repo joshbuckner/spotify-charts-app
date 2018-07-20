@@ -32,7 +32,7 @@ class App extends Component {
       // console.log('this.state', this.state);
       const BASE_URL = 'https://api.spotify.com/v1/search?';
       const FETCH_URL = BASE_URL + 'query=genre%3A' + this.state.searchField + '&type=track&market=US&offset=0&limit=50';
-      var accessToken = 'BQDNOBi_a1hP0ZQKiIsyb7es8DTkB8QWmCjQedMbMiZxsUt0en5Kc3VctbM1VztJbatrTyfFDmqFVVNw8cS2WGC74Y-NGaUim_PKJ74laqt3Ln2nvlUm1OWPaiMDTblq5LSE17KOszwMIqqt_CasB_wfA1pdWQ'
+      var accessToken = 'BQCy-_8u3_OU0Ky4yM0EkSn-sqIof0VryUyoK1l_D_KdQccWQYLOukxvcUdD4wMMw7iWCO8VefoROi18wUV93Jh2HyzZo2h5sxVCvzP5rhrZmDbr4KZdjnUcnkbjNDYclCJtGWEn2EBs0td8TTKphM5GJh1S0g'
 
       var myOptions = {
         method: 'GET',
