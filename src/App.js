@@ -13,10 +13,17 @@ class App extends Component {
   	super()
   	this.state = {
       genreList: genreList,
-	    searchField: ''
+	    searchField: '',
+      accessToken: ''
   	}
   }
 
+
+  componentDidMount() {
+    fetch('http://localhost:8888/auth')
+        .then(response => response.json())
+        .then(data => this.setState({ accessToken: data.access_token }))
+  }
   // componentDidMount() {
   // 	fetch('https://api.spotify.com/v1/search?q=genre%3Apop&type=track')
 	 //  	.then(response=> {
@@ -28,16 +35,19 @@ class App extends Component {
 	 //  	console.log(this.state.genreList);
   // }
 
+
   updateGenreList = (event) => {
+
+    console.log(this.state.accessToken);
       // console.log('this.state', this.state);
       const BASE_URL = 'https://api.spotify.com/v1/search?';
       const FETCH_URL = BASE_URL + 'query=genre%3A' + this.state.searchField + '&type=track&market=US&offset=0&limit=50';
-      var accessToken = 'BQCy-_8u3_OU0Ky4yM0EkSn-sqIof0VryUyoK1l_D_KdQccWQYLOukxvcUdD4wMMw7iWCO8VefoROi18wUV93Jh2HyzZo2h5sxVCvzP5rhrZmDbr4KZdjnUcnkbjNDYclCJtGWEn2EBs0td8TTKphM5GJh1S0g'
+      // var accessToken = ''
 
       var myOptions = {
         method: 'GET',
         headers: {
-          'Authorization': 'Bearer ' + accessToken
+          'Authorization': 'Bearer ' + this.state.accessToken
         },
         mode: 'cors',
         cache: 'default'
