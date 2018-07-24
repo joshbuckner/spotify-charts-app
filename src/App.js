@@ -3,7 +3,7 @@ import './App.css';
 import Navigation from './components/Navigation/Navigation';
 import FilterBy from './components/Filterby/Filterby';
 import Tracklist from './components/Tracklist/Tracklist';
-import { genreList } from './components/Tracklist/sample_genre_database';
+// import { genreList } from './components/Tracklist/sample_genre_database';
 // import PlaylistInput from './components/PlaylistInput/PlaylistInput';
 
 // 9aa1fc52decc4038a023620ce8e2f47b
@@ -12,7 +12,7 @@ class App extends Component {
   constructor() {
   	super()
   	this.state = {
-      genreList: genreList,
+      genreList: '',
 	    searchField: '',
       accessToken: ''
   	}
@@ -20,9 +20,31 @@ class App extends Component {
 
 
   componentDidMount() {
+
     fetch('http://localhost:8888/auth')
         .then(response => response.json())
-        .then(data => this.setState({ accessToken: data.access_token }))
+        .then(data => this.setState({ accessToken: data.access_token }));
+
+      const BASE_URL = 'https://api.spotify.com/v1/search?';
+      const FETCH_URL = BASE_URL + 'query=genre%3A' + 'rock' + '&type=track&market=US&offset=0&limit=50';
+      // var accessToken = ''
+
+      var myOptions = {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + this.state.accessToken
+        },
+        mode: 'cors',
+        cache: 'default'
+      };
+
+      fetch(FETCH_URL, myOptions)
+        .then(response => response.json())
+        .then(tracks => {        
+          this.setState({ genreList: tracks });
+        })
+
+
   }
   // componentDidMount() {
   // 	fetch('https://api.spotify.com/v1/search?q=genre%3Apop&type=track')
@@ -56,7 +78,7 @@ class App extends Component {
       fetch(FETCH_URL, myOptions)
         .then(response => response.json())
         .then(tracks => {        
-          this.setState({ genreList: tracks });
+          this.setState({ genreList: tracks })
         })
 
     }
