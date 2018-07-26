@@ -24,7 +24,6 @@ class App extends Component {
     fetch('http://localhost:8888/auth')
         .then(response => response.json())
         .then(data => this.setState({ accessToken: data.access_token }));
-
   }
   // componentDidMount() {
   // 	fetch('https://api.spotify.com/v1/search?q=genre%3Apop&type=track')
@@ -43,7 +42,7 @@ class App extends Component {
     // console.log(this.state.accessToken);
       // console.log('this.state', this.state);
       const BASE_URL = 'https://api.spotify.com/v1/search?';
-      const FETCH_URL = BASE_URL + 'query=genre%3A' + this.state.searchField + '&type=track&market=US&offset=0&limit=50';
+      const FETCH_URL = BASE_URL + 'query=genre%3A' + this.state.searchField + '&type=artist&market=US&offset=0&limit=50';
       // var accessToken = ''
 
       var myOptions = {

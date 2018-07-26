@@ -8,7 +8,8 @@ const Headers = () => {
 					<table className="chart-table">
 						<thead>
 							<tr>
-								<th className="chart-table-track">Track</th>
+								<th className="chart-table-track">Artist</th>
+								<th className="chart-table-followers">Followers</th>
 								<th className="chart-table-streams">Popularity</th>
 							</tr>
 						</thead>

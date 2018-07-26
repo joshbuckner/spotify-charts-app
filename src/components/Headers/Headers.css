@@ -96,3 +96,10 @@ td, th {
 	    padding: 0 0 20px 0;
 	}
 }
+
+.chart-table th.chart-table-followers {
+    text-align: left;
+    margin-left: 50px;
+    float: left;
+    white-space: nowrap;
+}
