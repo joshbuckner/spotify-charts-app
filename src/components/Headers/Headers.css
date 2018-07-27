@@ -98,8 +98,10 @@ td, th {
 }
 
 .chart-table th.chart-table-followers {
-    text-align: left;
-    margin-left: 50px;
-    float: left;
-    white-space: nowrap;
+	color: #7a7a7a;
+	font-weight: bold;
+    /*text-align: left;*/
+    margin-left: 585px;
+    /*float: left;*/
+    /*white-space: nowrap;*/
 }

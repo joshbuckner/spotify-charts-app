@@ -47,8 +47,29 @@ const Tracklist = ({ genreList }) => {
 			/>
 		);
 	})
-	
-	return (
+
+	function isEmpty(obj) {
+	    for(var key in obj) {
+	        if(obj.hasOwnProperty(key))
+	            return false;
+	    }
+	    return true;
+	}
+
+	if (isEmpty(trackComponent)) {
+		return (
+			<div className="notFound">
+				<h3>Genre not found. Please try again.</h3>
+				<div className="searchTips">
+					<h5>Search Tips:</h5>
+					<ul>
+						<li>Try alternate spellings for your search terms</li>
+						<li>Use different search terms</li>
+					</ul>
+				</div>
+			</div>
+		);
+	} else return (
 			<div>
 				<Headers />
 				{trackComponent}

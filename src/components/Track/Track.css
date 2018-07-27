@@ -23,46 +23,50 @@ div {
 
 }
 
-.chart-table-position {
+.chart-table-rank {
 	display: block;
 	color: #5e5d5d;
-	font: 25px/40px Trebuchet MS;
-	margin: 8px 20px 0 0;
+	font: 25px/0 Trebuchet MS;
+	margin: 0 900px 0 0;
+	padding: 0 0 0 0;
 	margin-left: 40px;
-    float: left;
+    /*float: left;*/
     font-weight: 800;
+    line-height: 5px;
+    text-align: center;
+}
+
+.chart-table-followers {
+	color: #5e5d5d;
+	display: block;
+	/*float: right;*/
+    /*line-height: 40px;*/
+    padding: 0 132px 0 10px;
+    cursor: default;
+    font: 20px/0px Trebuchet MS;
+    /*margin-left: 760px;*/
+    font-weight: 400;
+    text-align: right;
 }
 
 .chart-table-artist {
-	color: #5e5d5d;
 	display: block;
-	float: right;
-    line-height: 40px;
-    padding: 0 0 0 10px;
+    /*line-height: 40px;*/
+    padding: 0 0 0 125px;
     cursor: default;
-    font: 20px/40px Trebuchet MS;
-    margin: 0;
-    font-weight: 400;
-}
-
-.chart-table-track {
-	display: block;
-    line-height: 40px;
-    padding: 8px 0 0 43px;
-    cursor: default;
-    float: left;
-    font: 20px/40px Trebuchet MS;
+    /*float: left;*/
+    font: 20px/0px Trebuchet MS;
     margin: 0;
     font-weight: 800;
 }
 
-.chart-table-streamstats {
+.chart-table-popularity {
 	display: block;
 	color: #5e5d5d;
-    line-height: 40px;
-    padding: 8px 0 0 972px;
+    padding-left: 972px;
     cursor: default;
-    font: 20px/40px Trebuchet MS;
+    font: 20px Trebuchet MS;
+    line-height: 0px;
     position: relative;
 }
 

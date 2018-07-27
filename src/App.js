@@ -86,7 +86,7 @@ class App extends Component {
 	        {<Tracklist genreList={this.state.genreList} />}
 	      </div>
 	    );
-	}
+	  }
   }
 }
 

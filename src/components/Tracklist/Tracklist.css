@@ -4,3 +4,42 @@
 	width: 1090px;
 	margin: 0 auto;
 }
+
+.notFound {
+	display: block;
+	margin: 200px auto;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+h3 {
+	text-align: center;
+	font-size: 35px;
+	padding-bottom: 25px;
+}
+
+h5 {
+	font-size: 25px;
+	line-height: 0;
+}
+
+ul {
+	list-style-position: inside;
+	/*margin: 0 0 0 500px;*/
+}
+
+li {
+	line-height: 30px;
+}
+
+.searchTips {
+	color: gainsboro;
+	/*display: block;*/
+	/*position: fixed;*/
+	/*margin: 0 0 0 750px;*/
+	margin-left: auto;
+	margin-right: auto;
+	width: 25em;
+	/*text-align: center;*/
+	/*padding: 0 0 0 1000px;*/
+}
