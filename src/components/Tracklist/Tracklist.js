@@ -12,7 +12,7 @@ const Tracklist = ({ genreList }) => {
 
 	// console.log(genreList.artists.items[0]);
 	const sortedByPopular = genreList.artists.items.sort((a, b) => {
-		return b.popularity - a.popularity
+		return b.popularity - a.popularity || b.followers.total - a.followers.total;
 	});
 
 	const commafy = (num) => {
@@ -26,21 +26,21 @@ const Tracklist = ({ genreList }) => {
 	    return str.join('.');
 	}
 	// const artistRanking = 
-	let rank = 0;
+	
 	const trackComponent = sortedByPopular.map((song, i) => {
-		
-		if (genreList.artists.items[i] === genreList.artists.items[0]) {
-			rank = rank + 1;
-		}
-		else if (genreList.artists.items[i].popularity === genreList.artists.items[i-1].popularity) {
-			rank = rank;
-		}
-		else rank = rank + 1;
+		let rank = 0;
+		// if (genreList.artists.items[i] === genreList.artists.items[0]) {
+		// 	rank = rank + 1;
+		// }
+		// else if (genreList.artists.items[i].popularity === genreList.artists.items[i-1].popularity) {
+		// 	rank = rank;
+		// }
+		// else rank = rank + 1;
 				
 		return (
 			<Track 
 				key={i}
-				rank={rank}
+				rank={rank + i + 1}
 				artistName={genreList.artists.items[i].name} 
 				followerCount={commafy(genreList.artists.items[i].followers.total)} 
 				popularity={genreList.artists.items[i].popularity} 
