@@ -3,6 +3,7 @@ import './App.css';
 import Navigation from './components/Navigation/Navigation';
 import FilterBy from './components/Filterby/Filterby';
 import Tracklist from './components/Tracklist/Tracklist';
+import GenreDisplay from './components/Genredisplay/GenreDisplay';
 import { genreList } from './components/Tracklist/sample_genre_database';
 
 class App extends Component {
@@ -10,6 +11,8 @@ class App extends Component {
   	super()
   	this.state = {
       genreList: genreList,
+      genreDisplay: 'Pop',
+      display: true,
 	    searchField: '',
       accessToken: ''
   	}
@@ -20,6 +23,7 @@ class App extends Component {
       .then(response => response.json())
       .then(data => this.setState({ accessToken: data.access_token }));
   }
+
   // update the genreList state with a json object from spotify's api based on the query the user has entered
   updateGenreList = (event) => {
     const BASE_URL = 'https://api.spotify.com/v1/search?';
@@ -38,15 +42,24 @@ class App extends Component {
       .then(response => response.json())
       .then(tracks => {        
         this.setState({ genreList: tracks })
-      })
+      });
     } else {
       fetch(FETCH_URL, myOptions)
       .then(response => response.json())
       .then(tracks => {        
         this.setState({ genreList: tracks })
-      })
+      });
+    };
+
+    
+    if (this.state.genreList.artists.items.length === 0) {
+      this.setState({ display: false })
+    } else {
+      this.setState({ display: true })
     }
+    this.setState({ genreDisplay: this.state.searchField })
   }
+
   // update searchField state to reflect whatever the user has typed in
   onSearchChange = (event) => {
   // if searchField includes spaces add " to the beginning and end of the searchfield string, per spotify api query requirements
@@ -54,17 +67,18 @@ class App extends Component {
       this.setState({ searchField: '"' + event.target.value + '"' })
     } else {
       this.setState({ searchField: event.target.value })
-    }
+    };
   }
 
   render() {
     return (
       <div id="content" className="App">
         <Navigation />
-        <FilterBy updateGenreList={this.updateGenreList} searchChange={this.onSearchChange}/>
+        <GenreDisplay genreDisplay={this.state.genreDisplay} display={this.state.display} />
+        <FilterBy updateGenreList={this.updateGenreList} searchChange={this.onSearchChange} />
         <Tracklist genreList={this.state.genreList} />
       </div>
-    );
+    )
 	}
 }
 

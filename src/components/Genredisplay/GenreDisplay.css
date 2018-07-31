@@ -1,0 +1,45 @@
+@media (min-width: 768px) {
+	.wrapper {
+	    padding: 20px 0 0 0;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+div {
+	display: block;
+}
+
+.wrapper {
+	padding: 10px 0;
+}
+
+@media (min-width: 768px) {
+	.container {
+	    padding-left: 20px;
+	    padding-right: 20px;
+	    max-width: 1090px;
+	}
+}
+
+.container {
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.genre-display {
+	text-align: left;
+    float: left;
+    margin: 40px 0 0 0px;
+    position: relative;
+    font-size: 4em;
+    width: 680px;
+    padding: 0 0 20px 134px;
+    /*-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;*/
+    user-select: none;
+}

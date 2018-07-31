@@ -69,13 +69,18 @@ const Tracklist = ({ genreList }) => {
 				</div>
 			</div>
 		);
-	} else return (
+		// const notfound = () => {notFound}
+		// notfound();
+	} else { 
+		return (
+			
 			<div>
 				<Headers />
 				{trackComponent}
 				<div className="underline-bottom"></div>
 			</div>
 		);
+	}
 }
 
 export default Tracklist;
