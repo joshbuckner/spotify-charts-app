@@ -12,7 +12,6 @@ class App extends Component {
   	this.state = {
       genreList: genreList,
       genreDisplay: 'Pop',
-      display: true,
 	    searchField: '',
       accessToken: ''
   	}

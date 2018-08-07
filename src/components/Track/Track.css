@@ -69,4 +69,6 @@ div {
     line-height: 0px;
     position: relative;
 }
-
+a.trackBar {
+	color: white;
+}
