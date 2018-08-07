@@ -19,7 +19,7 @@ class App extends Component {
   }
   // on initial page open request a new spotify api access token from /auth endpoint from backend server
   componentDidMount() {
-    fetch('http://localhost:8888/auth')
+    fetch('https://stark-hollows-70483.herokuapp.com/auth')
       .then(response => response.json())
       .then(data => this.setState({ accessToken: data.access_token }));
   }
