@@ -7,7 +7,7 @@ import './Tracklist.css';
 
 
 
-const Tracklist = ({ genreList }) => {
+const Tracklist = ({ genreList, notFound }) => {
 	
 
 	// console.log(genreList.artists.items[0]);

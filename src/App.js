@@ -43,21 +43,15 @@ class App extends Component {
       .then(tracks => {        
         this.setState({ genreList: tracks })
       });
+       this.setState({ genreDisplay: '' });
     } else {
       fetch(FETCH_URL, myOptions)
       .then(response => response.json())
       .then(tracks => {        
         this.setState({ genreList: tracks })
       });
+      this.setState({ genreDisplay: this.state.searchField });
     };
-
-    
-    if (this.state.genreList.artists.items.length === 0) {
-      this.setState({ display: false })
-    } else {
-      this.setState({ display: true })
-    }
-    this.setState({ genreDisplay: this.state.searchField })
   }
 
   // update searchField state to reflect whatever the user has typed in
@@ -74,7 +68,7 @@ class App extends Component {
     return (
       <div id="content" className="App">
         <Navigation />
-        <GenreDisplay genreDisplay={this.state.genreDisplay} display={this.state.display} />
+        <GenreDisplay genreDisplay={this.state.genreDisplay} genreList={this.state.genreList} />
         <FilterBy updateGenreList={this.updateGenreList} searchChange={this.onSearchChange} />
         <Tracklist genreList={this.state.genreList} />
       </div>
