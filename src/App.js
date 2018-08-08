@@ -66,9 +66,12 @@ class App extends Component {
     };
   }
 
+
+
   render() {
+    let body_background = this.state.route === 'landingpage' ? "landing-page-back" : "results-page-back";
     return (
-      <div id="content" className="App">
+      <div id="content" className={body_background}>
         <Navigation />
         { this.state.route === 'landingpage' ? 
           <div>

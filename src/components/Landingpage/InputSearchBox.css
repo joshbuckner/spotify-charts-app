@@ -7,9 +7,14 @@
 	display: inline-block;
 	float: right;
 	color: white;
-	background: transparent;
+	background: rgba(0, 0, 0, 0.1);
 	height: 54px;
 	width: 325px;
 	font-size: 30px;
 	border-radius: 5px;
+
+}
+
+::placeholder {
+	color: white;
 }
