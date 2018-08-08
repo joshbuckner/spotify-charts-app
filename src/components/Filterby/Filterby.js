@@ -4,7 +4,7 @@ import './Filterby.css';
 import InputSearchBox from './InputSearchBox';
 import SearchButton from './SearchButton';
 
-const Filterby = ({ searchChange, updateGenreList }) => {
+const Filterby = ({ searchChange, updateGenreList, onRouteChange }) => {
 	return (
 			<div className="wrapper">
 				<div className="container">
@@ -13,7 +13,7 @@ const Filterby = ({ searchChange, updateGenreList }) => {
 							<div className="chart-filters">
 								<label>Filter by Genre</label>
 								<SearchButton updateGenreList={updateGenreList}/>
-								<InputSearchBox searchChange={searchChange}/>
+								<InputSearchBox updateGenreList={updateGenreList} searchChange={searchChange}/>
 								{/*<Searchgenre searchChange={searchChange}/>*/}
 							</div>
 						</div>

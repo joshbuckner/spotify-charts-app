@@ -4,12 +4,14 @@ import Navigation from './components/Navigation/Navigation';
 import FilterBy from './components/Filterby/Filterby';
 import Tracklist from './components/Tracklist/Tracklist';
 import GenreDisplay from './components/Genredisplay/GenreDisplay';
+import LandingPage from './components/Landingpage/LandingPage';
 import { genreList } from './components/Tracklist/sample_genre_database';
 
 class App extends Component {
   constructor() {
   	super()
   	this.state = {
+      route: 'landingpage',
       genreList: genreList,
       genreDisplay: 'Pop',
 	    searchField: '',
@@ -36,6 +38,7 @@ class App extends Component {
       mode: 'cors',
       cache: 'default'
     };
+    this.setState({route: 'resultspage'});
     if (this.state.searchField === "") {
       fetch(EMPTY_FETCH_URL, myOptions)
       .then(response => response.json())
@@ -67,9 +70,17 @@ class App extends Component {
     return (
       <div id="content" className="App">
         <Navigation />
-        <GenreDisplay genreDisplay={this.state.genreDisplay} genreList={this.state.genreList} />
-        <FilterBy updateGenreList={this.updateGenreList} searchChange={this.onSearchChange} />
-        <Tracklist genreList={this.state.genreList} />
+        { this.state.route === 'landingpage' ? 
+          <div>
+            <LandingPage updateGenreList={this.updateGenreList} searchChange={this.onSearchChange} />
+          </div>
+        : 
+          <div>
+            <GenreDisplay genreDisplay={this.state.genreDisplay} genreList={this.state.genreList} />
+            <FilterBy updateGenreList={this.updateGenreList} searchChange={this.onSearchChange} />
+            <Tracklist genreList={this.state.genreList} />
+          </div>
+        }
       </div>
     )
 	}

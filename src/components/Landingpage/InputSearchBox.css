@@ -1,0 +1,15 @@
+.landing-search-box {
+	padding: 5px 160px 0 0;
+	
+}
+
+.landing-search-box input {
+	display: inline-block;
+	float: right;
+	color: white;
+	background: transparent;
+	height: 54px;
+	width: 325px;
+	font-size: 30px;
+	border-radius: 5px;
+}

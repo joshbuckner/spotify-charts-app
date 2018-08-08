@@ -8,7 +8,7 @@ const InputSearchBox = ({ searchChange, updateGenreList }) => {
 		}
 	}
 	return (
-		<div className="search-box">
+		<div className="landing-search-box">
 			<input
 				type="search" 
 				placeholder="search genre" 
