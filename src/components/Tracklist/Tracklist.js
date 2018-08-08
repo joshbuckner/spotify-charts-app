@@ -7,7 +7,7 @@ import './Tracklist.css';
 
 
 
-const Tracklist = ({ genreList, notFound }) => {
+const Tracklist = ({ genreList, onRouteChange }) => {
 	
 
 	// console.log(genreList.artists.items[0]);
@@ -57,6 +57,7 @@ const Tracklist = ({ genreList, notFound }) => {
 	}
 
 	if (isEmpty(trackComponent)) {
+		document.body.style = 'background: #181717';
 		return (
 			<div className="notFound">
 				<h3>Genre not found. Please try again.</h3>

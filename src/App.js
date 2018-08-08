@@ -66,6 +66,11 @@ class App extends Component {
     };
   }
 
+  // onRouteChange = (event) => {
+  //   if (this.state.route !== 'resultspage') {
+  //     this.setState({ route: 'resultspage' });
+  //   }
+  // }
 
 
   render() {
@@ -81,7 +86,7 @@ class App extends Component {
           <div>
             <GenreDisplay genreDisplay={this.state.genreDisplay} genreList={this.state.genreList} />
             <FilterBy updateGenreList={this.updateGenreList} searchChange={this.onSearchChange} />
-            <Tracklist genreList={this.state.genreList} />
+            <Tracklist onRouteChange={this.onRouteChange} genreList={this.state.genreList} />
           </div>
         }
       </div>
