@@ -39,7 +39,8 @@ class App extends Component {
       cache: 'default'
     };
     this.setState({route: 'resultspage'});
-    if (this.state.searchField === "") {
+    //this needs to be refactored bad
+    if (this.state.searchField === "" || this.state.searchField.charAt(0) === ";" || this.state.searchField.charAt(0) === "`" || this.state.searchField.charAt(0) === "{" || this.state.searchField.charAt(0) === "}") {
       fetch(EMPTY_FETCH_URL, myOptions)
       .then(response => response.json())
       .then(tracks => {        
@@ -71,7 +72,6 @@ class App extends Component {
   //     this.setState({ route: 'resultspage' });
   //   }
   // }
-
 
   render() {
     let body_background = this.state.route === 'landingpage' ? "landing-page-back" : "results-page-back";
