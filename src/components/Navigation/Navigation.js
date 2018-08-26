@@ -8,7 +8,7 @@ const Navigation = () => {
 						<h1 className='header-logo'>
 							<a href='/'>Spotify</a>
 						</h1>
-						<h2 className='header-title'>Charts</h2>
+						<h2 className='header-title'>Genre Charts</h2>
 					</div>
 				</nav>
 		);
